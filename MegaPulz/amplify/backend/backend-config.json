@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "megapulz06304666": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

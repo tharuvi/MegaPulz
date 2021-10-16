@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-megapulz-dev-214707-authRole",
+      "UnauthRoleArn": "arn:aws:iam::725584956125:role/amplify-megapulz-dev-214707-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::725584956125:role/amplify-megapulz-dev-214707-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-megapulz-dev-214707-deployment",
+      "UnauthRoleName": "amplify-megapulz-dev-214707-unauthRole",
+      "StackName": "amplify-megapulz-dev-214707",
+      "StackId": "arn:aws:cloudformation:ap-south-1:725584956125:stack/amplify-megapulz-dev-214707/18f65260-f3ad-11eb-b7af-0a0cd2127dd6",
+      "AmplifyAppId": "dc5pekrus4co5"
+    },
+    "categories": {
+      "auth": {
+        "megapulz06304666": {}
+      }
+    }
+  }
+}
