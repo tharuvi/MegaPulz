@@ -20,6 +20,8 @@ const VisitDetails = ({navigation}) => {
 
   const [visits, setVisits] = useState([]);
   const [visitValues, setVisitValues] = useState('');
+  var [ isPress, setIsPress ] = React.useState(false);
+
 
   const renderItem = ({ item }) => (
     <Item title={item.title} />
@@ -81,6 +83,19 @@ const VisitDetails = ({navigation}) => {
     }
   
   //////end api//////
+  
+
+  var touchProps = {
+    activeOpacity: 1,
+    underlayColor: 'blue',                               
+    style: isPress ? styles.btnPress : styles.btnNormal, 
+    onHideUnderlay: () => setIsPress(false),
+    onShowUnderlay: () => setIsPress(true),
+    onPress: () => console.log('HELLO'),                 
+  };
+
+
+
   return (
     <View style = {styles.containerm}>
 
@@ -150,7 +165,7 @@ const styles = StyleSheet.create({
   btns: {
     marginBottom:30,
     flexDirection: "row",
-    
+    bottom: 70,
     justifyContent: 'space-around',
     padding:10,
     marginTop:150,

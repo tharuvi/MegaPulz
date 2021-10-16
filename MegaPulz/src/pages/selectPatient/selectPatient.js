@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, Pressable, Alert } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, Pressable, Alert, Button } from 'react-native'
 import { Auth } from 'aws-amplify';
 import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -33,10 +33,10 @@ export default function SelectProfile({ route, navigation, updateAuthState }) {
     }
 
     const storeClientPrimaryKey = async (value) => {
-      
+    
         try {
             await AsyncStorage.setItem('client_primary_key', value);
-           // console.log('Patient ID:'+ JSON.stringify(value));
+        // console.log('Patient ID:'+ JSON.stringify(value));
         }
         catch (e) {
             console.error(e);
@@ -83,13 +83,17 @@ export default function SelectProfile({ route, navigation, updateAuthState }) {
             </View>
 
             <View style={styles.bottomButtons}>
-                <Pressable style={styles.button} onPress={() => { navigation.navigate("SearchPatient") }}>
+
+                <Pressable style={styles.button1} onPress={() => { navigation.navigate("SearchProfile") }}>
                     <Text style={styles.buttonText}>Search Patient</Text>
                 </Pressable>
                 <View style={styles.space}></View>
                 <Pressable onPress={signOut} style={styles.button}>
-                    <Text style={styles.buttonText}>Sign out</Text>
+                <Text style={styles.buttonText}>Sign out</Text>
                 </Pressable>
+
+
+                
             </View>
 
         </View >
@@ -134,20 +138,31 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     bottomButtons: {
-        justifyContent: 'flex-end',
+        flex: 1,
         flexDirection: 'row',
+        justifyContent: 'flex-end',
         position: 'absolute',
-        bottom: 0,
-        left: 0,
+        bottom: 25,
+        left: 20,
+        
     },
     button: {
         backgroundColor: '#09233e',
         padding: 20,
         paddingHorizontal: 50,
         borderRadius: 15,
+        
+    },
+
+    button1: {
+        backgroundColor: '#09233e',
+        padding: 20,
+        paddingHorizontal: 30,
+        borderRadius: 15,
+        
     },
     space: {
-        paddingHorizontal: 10,
+        paddingHorizontal: 30,
     },
     buttonText: {
         color: '#3ab2c0',
